@@ -5,23 +5,20 @@ import React, {
   TouchableHighlight,
   View
 } from 'react-native';
+import Button from 'react-native-button';
+import { Actions } from 'react-native-router-flux';
 
 class App extends Component {
-  handleTripCreate() {
-    console.log('creating trip...');
-  }
-
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
           TripDivvy
         </Text>
-        <TouchableHighlight onPress={this.handleTripCreate}>
-          <Text style={styles.button}>
-            Create a Trip
-          </Text>
-        </TouchableHighlight>
+
+        <Button onPress={Actions.newTrip} style={styles.button}>
+          Create a Trip
+        </Button>
       </View>
     );
   }
